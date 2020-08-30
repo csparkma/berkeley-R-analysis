@@ -1,0 +1,29 @@
+# Mile Per Gallon Regression:
+  Based on the findings from the MPG Regression, I found that "Vehicle Length" and "Ground Clearance" provided a non-random amount of variance to the mpg values in the dataset. 
+  
+  The p-value of our regression was 3.637e-12, which is well under our assumed significance level of 0.05. Therefore, we have sufficient evidence to reject our null hypothesis, meaning that the slope of our linear model is NOT zero.
+  
+  While using all of the columns in the dataset as predictors gives us a more "accurate" model, based on an increased R-squared, however, it is subject to overfitting as only "Vehicle Length" and "Ground Clearance" provide a non-random amount of variance. The result was a R-squared value of 0.674, which means that the model is accurate at predicting MP ~67% of the time. 
+  
+  While this is a fairly decent, statistically significant predictive model, I would suggest we run further analysis and find additional data to increase accuracy before pushing to production.
+  
+# Suspension Coil Summary Statistics
+  Based on findings from the Suspension Coil test, the average PSI was ~1499.5 with a median of 1499.7 PSI. The variance was 76.2 PSI, which is well under the design specification for MechaCar suspension coils. Given the standard deviation is 8.73 PSI, we can expect the vas majority of the Suspension Coils will fall within the design specification.
+
+# Suspension Coil T-Test
+  The p-value of the Suspension Coil T-test was 0.5117, which means we do not have sufficient evidence to reject the null hypothesis, meaning that the mean is statistically similar to the population mean of 1500.
+  
+# Design your own Study: Compare the performance of the MechaCar prototype vehicle to other comparable vehicles on the market.
+
+  The main question for the experiment that we have to answer: "Is the MechaCar vehicle more performant than the competition?" In order to get an accurate comparison, we would need to consider what consumers consider when deciding on the performance of a car. There are many features that are important in the purchase, such as cost, color, AWD, amenities, etc. However, those aren't necessarily features that tell us if the car is more "performant" than the competition.
+  
+  The most common features that I think would be necessary to compare across cars are:
+  - Fuel Efficiency: What is the avg MPG for both city & highway
+  - Acceleration: How fast to get to 60MPH is a common test for high-performance.
+  - Vehicle braking: how long it takes to stop vehicle from an avg speed is an indicator of safety and performance
+  
+ Given that MechaCar outperforms its competitors on the above metrics, we would need to test for statistical significance. While an ANOVA statistical test would allow us to test each of these averages across multiple car companies, it would not tell us whether the MechaCar was the specific vehicle that was statistically different. I would suggest that we use a Two-Sample t-test between the MechaCar and the other competitors that are less performant on each measure:
+  - H0: The difference between MechaCar <performance metric> and chosen competitor <performance metric> is equal to zero
+  - Ha: The difference between MechaCar <performance metric> and chosen competitor <performance metric> is not equal to zero
+
+We would need to collect data across many tests of MechaCar as well as its competitors for average Miles per Gallon given many different conditions, time in seconds to 60MPH, and test data on how long it takes for each vehicle to brake from average speeds. Using this data, we should be able to understand if the MechaCar is more performant and test for statistical significance.
